@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include <sstream>
+using std::istringstream;
+using std::ostringstream;
 
 int main()
 {
