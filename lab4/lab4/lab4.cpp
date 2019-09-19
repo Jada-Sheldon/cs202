@@ -2,13 +2,39 @@
 //
 
 #include <iostream>
+using std::cout;
+using std::endl;
 #include <sstream>
 using std::istringstream;
 using std::ostringstream;
+using std::string;
+#include <fstream>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::ofstream fout("example.txt", std::ios::app);
+	fout << "one\ntwo\nthree\n";
+	fout.close();
+
+	std::ifstream ifile("example.txt");
+	string fileInput;
+	string fileWord;
+	while (true) {
+		ifile >> fileWord;
+		if (!ifile) {
+			if (ifile.eof()) {
+				break;
+			}
+			else {
+				cout << "something went wrong." << endl;
+			}
+		}
+		else {
+			fileInput += fileWord + "\n";
+		}
+	}
+	cout << fileInput;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
