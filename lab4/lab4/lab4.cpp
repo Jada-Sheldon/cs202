@@ -44,6 +44,9 @@ int getInteger(string userInput) {
 			str.ignore('\n');
 			continue;
 		}
+		else {
+			break;
+		}
 	}
 	return numOfLines;
 }
@@ -51,17 +54,21 @@ int getInteger(string userInput) {
 int main()
 {
 	std::ofstream fout("example.txt", std::ios::app);
-	fout << "one\ntwo\nthree\n";
-	fout.close();
-
-	cout << readFile("example.txt");
-
-	cout << endl;
-	
 	cout << "enter a number." << endl;
 	string userInput;
+	int lines = getInteger(userInput);
 
-	getInteger(userInput);
+
+	string Message;
+	cout << "type a message You want to repeat" << endl;
+	getline(cin, Message);
+	for (int i = 0; i <= lines; i++){
+		fout << Message << "\n";
+	}
+
+	fout.close();
+	cout << readFile("example.txt");
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
