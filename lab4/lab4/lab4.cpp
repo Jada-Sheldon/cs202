@@ -4,6 +4,7 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
 #include <sstream>
 using std::istringstream;
 using std::ostringstream;
@@ -31,6 +32,22 @@ string readFile(string fileName) {
 	return fileInput;
 }
 
+int getInteger(string userInput) {
+	int numOfLines;
+	while (true) {
+		getline(cin, userInput);
+		istringstream str(userInput);
+		str >> numOfLines;
+		if (!str) {
+			cout << "input is not valid. please try again" << endl;
+			str.clear();
+			str.ignore('\n');
+			continue;
+		}
+	}
+	return numOfLines;
+}
+
 int main()
 {
 	std::ofstream fout("example.txt", std::ios::app);
@@ -38,6 +55,13 @@ int main()
 	fout.close();
 
 	cout << readFile("example.txt");
+
+	cout << endl;
+	
+	cout << "enter a number." << endl;
+	string userInput;
+
+	getInteger(userInput);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
