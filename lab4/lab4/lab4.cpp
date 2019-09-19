@@ -10,13 +10,7 @@ using std::ostringstream;
 using std::string;
 #include <fstream>
 
-
-int main()
-{
-	std::ofstream fout("example.txt", std::ios::app);
-	fout << "one\ntwo\nthree\n";
-	fout.close();
-
+string readFile(string fileName) {
 	std::ifstream ifile("example.txt");
 	string fileInput;
 	string fileWord;
@@ -34,7 +28,16 @@ int main()
 			fileInput += fileWord + "\n";
 		}
 	}
-	cout << fileInput;
+	return fileInput;
+}
+
+int main()
+{
+	std::ofstream fout("example.txt", std::ios::app);
+	fout << "one\ntwo\nthree\n";
+	fout.close();
+
+	cout << readFile("example.txt");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
