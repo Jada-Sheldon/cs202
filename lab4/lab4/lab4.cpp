@@ -14,9 +14,9 @@ using std::string;
 string readFile(string fileName) {
 	std::ifstream ifile("example.txt");
 	string fileInput;
-	string fileWord;
+	string fileline;
 	while (true) {
-		ifile >> fileWord;
+		getline(ifile, fileline);
 		if (!ifile) {
 			if (ifile.eof()) {
 				break;
@@ -26,7 +26,7 @@ string readFile(string fileName) {
 			}
 		}
 		else {
-			fileInput += fileWord + "\n";
+			fileInput += fileline + "\n";
 		}
 	}
 	return fileInput;
@@ -53,20 +53,22 @@ int getInteger(string userInput) {
 
 int main()
 {
-	std::ofstream fout("example.txt", std::ios::app);
+
 	cout << "enter a number." << endl;
 	string userInput;
 	int lines = getInteger(userInput);
 
 
+	std::ofstream fout("example.txt", std::ios::app);
 	string Message;
 	cout << "type a message You want to repeat" << endl;
 	getline(cin, Message);
 	for (int i = 0; i <= lines; i++){
-		fout << Message << "\n";
+		fout << Message << endl;
 	}
-
 	fout.close();
+
+
 	cout << readFile("example.txt");
 
 }
