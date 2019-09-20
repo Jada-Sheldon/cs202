@@ -63,7 +63,8 @@ int main()
 	string Message;
 	cout << "type a message You want to repeat" << endl;
 	getline(cin, Message);
-	for (int i = 0; i <= lines; i++){
+	cout << endl;
+	for (int i = 0; i < lines; i++){
 		fout << Message << endl;
 	}
 	fout.close();
