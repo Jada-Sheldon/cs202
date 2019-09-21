@@ -59,6 +59,10 @@ int main()
 	int lines = getInteger(userInput);
 
 	std::ofstream fout("example.txt", std::ios::app);
+	string message;
+	cout << "type a message you want to repeat in file." << endl;
+	getline(cin, message);
+	cout << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
