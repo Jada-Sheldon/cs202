@@ -29,6 +29,7 @@ string fileRead(string fileName) {
 			fileInput += fileline + "\n";
 		}
 	}
+	return fileInput;
 }
 
 
@@ -36,7 +37,7 @@ string fileRead(string fileName) {
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::ofstream fout("example.txt", std::ios::app);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
