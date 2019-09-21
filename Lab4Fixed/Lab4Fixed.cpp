@@ -67,6 +67,9 @@ int main()
 	for (int i = 0; i < lines; i++) {
 		fout << message << endl;
 	}
+	fout.close();
+
+	cout << fileRead("example.txt");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
