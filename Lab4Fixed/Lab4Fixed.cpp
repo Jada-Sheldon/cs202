@@ -32,7 +32,14 @@ string fileRead(string fileName) {
 	return fileInput;
 }
 
-
+int getInteger(string userInput) {
+	int numOfLines;
+	while (true) {
+		getline(cin, userInput);
+		istringstream str(userInput);
+		str >> numOfLines;
+	}
+}
 
 
 int main()
