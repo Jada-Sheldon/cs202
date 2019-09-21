@@ -38,7 +38,17 @@ int getInteger(string userInput) {
 		getline(cin, userInput);
 		istringstream str(userInput);
 		str >> numOfLines;
+		if (!str) {
+			cout << "input is not valid. pleas try again." << endl;
+			str.clear();
+			str.ignore('\n');
+			continue;
+		}
+		else {
+			break;
+		}
 	}
+	return numOfLines;
 }
 
 
