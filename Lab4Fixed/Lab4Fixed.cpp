@@ -69,6 +69,7 @@ int main()
 	}
 	fout.close();
 
+	cout << "here is what is in example.txt" << endl;
 	cout << fileRead("example.txt");
 }
 
