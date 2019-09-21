@@ -63,6 +63,10 @@ int main()
 	cout << "type a message you want to repeat in file." << endl;
 	getline(cin, message);
 	cout << endl;
+
+	for (int i = 0; i < lines; i++) {
+		fout << message << endl;
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
