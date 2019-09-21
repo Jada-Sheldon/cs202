@@ -17,9 +17,21 @@ string fileRead(string fileName) {
 	string fileline;
 	while (true) {
 		getline(ifile, fileline);
+		if (!ifile) {
+			if (ifile.eof()) {
+				break;
+			}
+			else {
+				cout << "something went wrong." << endl;
+			}
+		}
+		else {
+			fileInput += fileline + "\n";
+		}
 	}
-
 }
+
+
 
 
 int main()
