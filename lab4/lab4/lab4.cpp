@@ -11,8 +11,9 @@ using std::ostringstream;
 using std::string;
 #include <fstream>
 
+
 string readFile(string fileName) {
-	std::ifstream ifile("example.txt");
+	std::ifstream ifile(fileName);
 	string fileInput;
 	string fileline;
 	while (true) {
@@ -50,6 +51,7 @@ int getInteger(string userInput) {
 	}
 	return numOfLines;
 }
+
 
 int main()
 {
