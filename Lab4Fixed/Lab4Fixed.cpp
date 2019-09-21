@@ -54,6 +54,10 @@ int getInteger(string userInput) {
 
 int main()
 {
+	cout << "enter a number." << endl;
+	string userInput;
+	int lines = getInteger(userInput);
+
 	std::ofstream fout("example.txt", std::ios::app);
 }
 
