@@ -23,8 +23,13 @@ int Box::getHeight() const {
 	return height;
 }
 
-string Box::type(){
-
+string Box::type() const {
+	if (full == true) {
+		return "Filled";
+	}
+	else {
+		return "Hollow";
+	}
 }
 
 void Box::print(ostream & stream) const {

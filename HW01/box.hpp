@@ -16,7 +16,7 @@ public:
 	int setHeight(int heightSize);
 	int getWidth() const;
 	int getHeight() const;
-	string type();
+	string type() const;
 	void print(ostream & stream) const;
 	Box();
 	Box(int userWidth, int userHeight);
