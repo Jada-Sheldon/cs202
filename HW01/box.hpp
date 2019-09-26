@@ -7,11 +7,13 @@
 #include <iostream>
 #include <sstream>
 using std::ostream;
+#include <string>
+using std::string;
 
 class Box {
 public:
-	void setWidth();
-	void setHeight();
+	int setWidth(int widthSize);
+	int setHeight(int heightSize);
 	void getWidth();
 	void getHeight();
 	string filled();
@@ -19,7 +21,8 @@ public:
 
 private:
 	bool full;
-
+	int width;
+	int height;
 };
 
 #endif

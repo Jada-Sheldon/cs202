@@ -5,16 +5,18 @@
 #include <string>
 using std::string;
 
-void Box::setWidth() {
-
+int Box::setWidth(int widthSize) {
+	width = widthSize;
+	return width;
 }
 
-void Box::setHeight() {
-
+int Box::setHeight(int heightSize) {
+	height = heightSize;
+	return height;
 }
 
 void Box::getWidth() {
-
+	
 }
 
 void Box::getHeight() {
