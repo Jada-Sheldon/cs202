@@ -16,8 +16,8 @@ public:
 	int setHeight(int heightSize);
 	int getWidth() const;
 	int getHeight() const;
-	string filled();
-	void print(ostream&);
+	string type();
+	void print(ostream & stream) const;
 
 private:
 	bool full;

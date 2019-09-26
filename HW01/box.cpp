@@ -23,10 +23,10 @@ int Box::getHeight() const {
 	return height;
 }
 
-string Box::filled() {
+string Box::type(){
 
 }
 
-void Box::print(ostream&) {
+void Box::print(ostream & stream) const {
 
 }
