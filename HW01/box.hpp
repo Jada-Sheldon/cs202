@@ -14,8 +14,8 @@ class Box {
 public:
 	int setWidth(int widthSize);
 	int setHeight(int heightSize);
-	void getWidth();
-	void getHeight();
+	int getWidth() const;
+	int getHeight() const;
 	string filled();
 	void print(ostream&);
 

@@ -15,12 +15,12 @@ int Box::setHeight(int heightSize) {
 	return height;
 }
 
-void Box::getWidth() {
-	
+int Box::getWidth() const {
+	return width;
 }
 
-void Box::getHeight() {
-
+int Box::getHeight() const {
+	return height;
 }
 
 string Box::filled() {
