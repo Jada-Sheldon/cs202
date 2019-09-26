@@ -18,6 +18,9 @@ public:
 	int getHeight() const;
 	string type();
 	void print(ostream & stream) const;
+	Box();
+	Box(int userWidth, int userHeight);
+	Box(int userWidth, int userHeight, bool userType);
 
 private:
 	bool full;

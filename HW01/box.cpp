@@ -30,3 +30,15 @@ string Box::type(){
 void Box::print(ostream & stream) const {
 
 }
+
+Box::Box() : width(1), height(1), full(true) {
+
+}
+
+Box::Box(int userWidth, int userHeight) : full(true) {
+
+}
+
+Box::Box(int userWidth, int userHeight, bool userType) {
+
+}
