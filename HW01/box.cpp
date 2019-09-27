@@ -43,24 +43,23 @@ void Box::print(ostream & os) const {
 			os << "\n";
 		}
 		else {
-			for (int j = 0; j < _width; j++) {
-				if (i == 0 || i == _height - 1) {
-					for (int j = 0; j < _width; j++) {
+			if (i == 0 || i == _height - 1) {
+				for (int j = 0; j < _width; j++) {
+					os << "x";
+				}
+			}
+			else {
+				for (int j = 0; j < _width; j++) {
+					if (j == 0 || j == _width - 1) {
 						os << "x";
 					}
-				}
-				else {
-					for (int j = 0; j < _width; j++) {
-						if (j == 0 || j == _width - 1) {
-							os << "x";
-						}
-						else {
-							os << " ";
-						}
+					else {
+						os << " ";
 					}
 				}
-				os << "\n";
 			}
+			os << "\n";
+			
 		}
 	}
 }

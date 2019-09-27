@@ -648,7 +648,7 @@ void test_class_Box_print(Tester& t)
 	os.str(""); //reset output holder
 	con4.print(os);
 	t.test(os.str() == "xx\nxx\n", "print 2x2 hollow box");
-
+	
 	// Test #5 (8x3 hollow)
 	con4.setWidth(8);
 	con4.setHeight(3);
