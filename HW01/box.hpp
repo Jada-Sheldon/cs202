@@ -17,15 +17,15 @@ public:
 	int getWidth() const;
 	int getHeight() const;
 	string type() const;
-	void print(ostream & stream) const;
+	void print(ostream & os) const ;
 	Box();
 	Box(int userWidth, int userHeight);
 	Box(int userWidth, int userHeight, bool userType);
 
 private:
 	bool full;
-	int width;
-	int height;
+	int _width;
+	int _height;
 };
 
 #endif
