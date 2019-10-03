@@ -1,9 +1,13 @@
 
 #include "complex.hpp"
 #include <iostream>
+using std::cout;
+using std::endl;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    cout << "Hello World!\n";
+	cout << 1 + Complex(2, 3) << endl;
 }
 

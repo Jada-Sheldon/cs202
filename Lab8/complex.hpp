@@ -4,11 +4,12 @@
 
 class Complex {
 public:
-
-
+	Complex(double real);
+	Complex(double real, double image);
 
 private:
-
+	double _real;
+	double _imag;
 };
 
 #endif // !COMPLEX_HPP
