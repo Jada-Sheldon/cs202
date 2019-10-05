@@ -33,3 +33,7 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 		}
 	}
 }
+
+void numberChase(const string& fileName, ostream& os) {
+
+}

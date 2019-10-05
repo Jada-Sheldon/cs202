@@ -7,5 +7,7 @@
 
 int getIdFromFile(const std::string & fileName, std::istream& is, std::ostream& os);
 
+void numberChase(const std::string& fileName, std::ostream& os);
+
 
 #endif
