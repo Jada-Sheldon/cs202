@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-int getIdFromFile(const string& fileName, istream& is, ostream& os);
+int getIdFromFile(const std::string & fileName, std::istream& is, std::ostream& os);
 
 
 #endif
