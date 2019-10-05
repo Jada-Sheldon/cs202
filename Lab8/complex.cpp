@@ -16,6 +16,9 @@ double Complex::getImag() const{
 }
 
 std::ostream & operator<<(std::ostream & os, const Complex & num) {
-	os << num.getReal();
+	os << num.getImag();
 	return os;
 }
+
+
+
