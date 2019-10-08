@@ -57,6 +57,24 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 }
 
 void numberChase(const string& fileName, ostream& os) {
-	ifstream ofile(fileName, std::ios::binary);
-
+	ifstream ofile;
+	ofile.open(fileName, std::ios::binary);
+	if (!ofile) {
+		cout << "wrong" << endl;
+	}
+	int rounds = 0;
+	int oldspot;
+	while (true) {
+		cout << "x";
+		int spot;
+		for (int i = 0; i <= rounds; i++) {
+			ofile.read(reinterpret_cast<char*>(&spot), sizeof(int));
+		}
+		rounds = spot;
+		oldspot = spot;
+		os << oldspot;
+		if (oldspot < 0) {
+			break;
+		}
+	}
 }
