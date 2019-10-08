@@ -14,7 +14,6 @@ using std::istringstream;
 int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 	ifstream ifile;
 	string line;
-	int count = 0;
 	while (true) {
 		ifile.open(fileName);
 		string name;
@@ -33,6 +32,7 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 				if (!ifile) {
 					if (ifile.eof()) {
 						os << "error\n";
+						break;
 					}
 					else {
 						std::cout << "something went wrong" << std::endl;
@@ -46,7 +46,6 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 					int id;
 					istring >> nameId >> id;
 					if (name == nameId) {
-						count++;
 						os << id << "\n";
 						break;
 					}
@@ -55,7 +54,6 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 			ifile.close();
 		}
 	}
-	cout << count << endl;
 }
 
 void numberChase(const string& fileName, ostream& os) {
