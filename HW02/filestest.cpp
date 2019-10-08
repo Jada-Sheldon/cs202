@@ -179,7 +179,7 @@ void test_getIdFromFile(Tester & t)
    std::cout << "Tests with file having final newline:" << std::endl;
    std::ostringstream os; // Holds output
    std::istringstream is; // Holds input to getIdFromFile
-   string expectedOut;
+   std::string expectedOut;
    int res;
 
    os.clear();
@@ -270,7 +270,7 @@ void test_numberChase(Tester & t)
 {
 std::cout << "TESTS FOR numberChase" << std::endl;
 std::ostringstream os; // Holds output
-string expectedOut;
+std::string expectedOut;
 
 os.clear();
 os.str("");

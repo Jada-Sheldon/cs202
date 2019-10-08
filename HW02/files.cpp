@@ -10,10 +10,9 @@ using std::ifstream;
 using std::istringstream;
 
 int getIdFromFile(const string & fileName, istream & is, ostream & os) {
-	ofstream ifile(fileName);
+	ifstream ifile;
+	ifile.open(fileName);
 	string line;
-	getline(is, line);
-	istringstream istring(line);
 	while (true) {
 		if (!ifile) {
 			if (ifile.eof()) {
@@ -25,15 +24,22 @@ int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 			}
 		}
 		else {
+			getline(ifile, line);
+			istringstream istring(line);
 			int id;
 			istring >> id;
+			if (!istring) {
+				os << "error\n";
+				istring.clear();
+				istring.ignore('\n');
+				continue;
+			}
 			os << id << "\n";
-			//read file
-			
 		}
 	}
 }
 
 void numberChase(const string& fileName, ostream& os) {
+	ifstream ofile(fileName, std::ios::binary);
 
 }
