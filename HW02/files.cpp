@@ -1,5 +1,7 @@
 #include "files.hpp"
 #include <iostream>
+using std::cout;
+using std::endl;
 using std::istream;
 using std::ostream;
 using std::string;
@@ -11,32 +13,49 @@ using std::istringstream;
 
 int getIdFromFile(const string & fileName, istream & is, ostream & os) {
 	ifstream ifile;
-	ifile.open(fileName);
 	string line;
+	int count = 0;
 	while (true) {
-		if (!ifile) {
-			if (ifile.eof()) {
+		ifile.open(fileName);
+		string name;
+		getline(is, name);
+		if (!is) {
+			if (is.eof()) {
 				return 0;
 			}
 			else {
-				std::cout << "something went wrong" << std::endl;
+				cout << "something went wrong" << endl;
 				return -1;
 			}
 		}
 		else {
-			getline(ifile, line);
-			istringstream istring(line);
-			int id;
-			istring >> id;
-			if (!istring) {
-				os << "error\n";
-				istring.clear();
-				istring.ignore('\n');
-				continue;
+			while (true) {
+				if (!ifile) {
+					if (ifile.eof()) {
+						os << "error\n";
+					}
+					else {
+						std::cout << "something went wrong" << std::endl;
+						return -1;
+					}
+				}
+				else {
+					getline(ifile, line);
+					istringstream istring(line);
+					string nameId;
+					int id;
+					istring >> nameId >> id;
+					if (name == nameId) {
+						count++;
+						os << id << "\n";
+						break;
+					}
+				}
 			}
-			os << id << "\n";
+			ifile.close();
 		}
 	}
+	cout << count << endl;
 }
 
 void numberChase(const string& fileName, ostream& os) {
