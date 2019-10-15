@@ -23,7 +23,7 @@ public:
 	Box(int userWidth, int userHeight, bool userType);
 
 private:
-	bool full;
+	enum _type { HOLLOW, FILLED, CHECKERED };
 	int _width;
 	int _height;
 };
