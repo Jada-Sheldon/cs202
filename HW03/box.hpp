@@ -31,6 +31,7 @@ private:
 	static int _howMany;
 	//added enum type
 	enum _type { HOLLOW, FILLED, CHECKERED };
+	_type category;
 	int _width;
 	int _height;
 };

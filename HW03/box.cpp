@@ -35,12 +35,19 @@ int Box::getHeight() const {
 }
 
 string Box::type() const {
-	if (full == true) {
-		return "Filled";
+	string types;
+	switch (category) {
+	case HOLLOW:
+		types = "Hollow";
+		break;
+	case CHECKERED:
+		types = "Checkered";
+		break;
+	case FILLED:
+		types = "Filled";
+		break;
 	}
-	else {
-		return "Hollow";
-	}
+	return types;
 }
 
 void Box::print(ostream& os) const {
@@ -76,19 +83,19 @@ void Box::print(ostream& os) const {
 
 
 //changed bool to enum type
-Box::Box() : _width(1), _height(1), _type(FILLED) {
+Box::Box() : _width(1), _height(1), category(FILLED) {
 	//added counter
 	_howMany++;
 }
 
 //changed bool to enum type
-Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), _type(FILLED) {
+Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), category(FILLED) {
 	//added counter
 	_howMany++;
 }
 
 //changed bool to enum type
-Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _height(userHeight), full(userType) {
+Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _height(userHeight), category(userType) {
 	//added counter
 	_howMany++;
 }
