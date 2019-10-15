@@ -61,6 +61,10 @@ Box::Box() : _width(1), _height(1), category(FILLED) {
 	_howMany++;
 }
 
+Box::Box(const Box& original) : _height(original._height), _width(original._width), category(original.category) {
+	_howMany++;
+}
+
 //changed bool to enum type
 Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), category(FILLED) {
 	//added counter
@@ -73,13 +77,11 @@ Box::Box(int userWidth, int userHeight, Boxtype userType) : _width(userWidth), _
 	_howMany++;
 }
 
-
 //created destructor
 Box::~Box() {
 	//minus counter
 	_howMany--;
 }
-
 
 //copy paste printer function then changed the if statement for a switch
 //added Checkered option
@@ -135,6 +137,7 @@ std::ostream& operator<<(std::ostream& os, const Box& boxPrint) {
 			}
 			os << "\n";
 			break;
+		//this is where a new case would be for a new type of box
 		}
 	}
 	return os;

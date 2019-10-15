@@ -10,6 +10,13 @@ using std::ostream;
 #include <string>
 using std::string;
 
+/*
+In order to add a new type of box you must change the << operator so it can print the new type
+also you got to add the new type to Boxtype
+also the type() function needs to have the new Boxtype added
+*/
+
+
 class Box {
 	friend std::ostream& operator<<(std::ostream& os, const Box& boxPrint);
 public:
@@ -22,8 +29,8 @@ public:
 	int getHeight() const;
 	Boxtype getType() const;
 	string type() const;
-	std::ostream print(ostream& os) const;
 	Box();
+	Box(const Box& original);
 	Box(int userWidth, int userHeight);
 	//changed bool to enum
 	Box(int userWidth, int userHeight, Boxtype userType); //figure out sometime
