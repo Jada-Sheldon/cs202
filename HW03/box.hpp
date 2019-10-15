@@ -12,6 +12,8 @@ using std::string;
 
 class Box {
 public:
+	//created function to see how many boxes seen
+	static int howMany();
 	int setWidth(int widthSize);
 	int setHeight(int heightSize);
 	int getWidth() const;
@@ -25,6 +27,8 @@ public:
 	~Box();
 
 private:
+	//declared int _howMany
+	static int _howMany;
 	//added enum type
 	enum _type { HOLLOW, FILLED, CHECKERED };
 	int _width;

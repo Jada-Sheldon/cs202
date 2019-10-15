@@ -7,6 +7,15 @@ using std::string;
 #include <sstream>
 using std::ostringstream;
 
+
+//defined _howMany int
+int Box::_howMany = 0;
+
+
+int Box::howMany() {
+	return _howMany;
+}
+
 int Box::setWidth(int widthSize) {
 	_width = widthSize;
 	return _width;
@@ -64,23 +73,29 @@ void Box::print(ostream& os) const {
 	}
 }
 
+
+
 //changed bool to enum type
 Box::Box() : _width(1), _height(1), _type(FILLED) {
-
+	//added counter
+	_howMany++;
 }
 
 //changed bool to enum type
 Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), _type(FILLED) {
-
+	//added counter
+	_howMany++;
 }
 
 //changed bool to enum type
 Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _height(userHeight), full(userType) {
-
+	//added counter
+	_howMany++;
 }
 
 
 //created destructor
 Box::~Box() {
-
+	//minus counter
+	_howMany--;
 }
