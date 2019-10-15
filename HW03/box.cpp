@@ -34,6 +34,10 @@ int Box::getHeight() const {
 	return _height;
 }
 
+Box::Boxtype Box::getType() const {
+	return category;
+}
+
 string Box::type() const {
 	string types;
 	switch (category) {
@@ -50,37 +54,6 @@ string Box::type() const {
 	return types;
 }
 
-void Box::print(ostream& os) const {
-	for (int i = 0; i < _height; i++) {
-		if (full == true) {
-			for (int j = 0; j < _width; j++) {
-				os << "x";
-			}
-			os << "\n";
-		}
-		else {
-			if (i == 0 || i == _height - 1) {
-				for (int j = 0; j < _width; j++) {
-					os << "x";
-				}
-			}
-			else {
-				for (int j = 0; j < _width; j++) {
-					if (j == 0 || j == _width - 1) {
-						os << "x";
-					}
-					else {
-						os << " ";
-					}
-				}
-			}
-			os << "\n";
-
-		}
-	}
-}
-
-
 
 //changed bool to enum type
 Box::Box() : _width(1), _height(1), category(FILLED) {
@@ -95,7 +68,7 @@ Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight)
 }
 
 //changed bool to enum type
-Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _height(userHeight), category(userType) {
+Box::Box(int userWidth, int userHeight, Boxtype userType) : _width(userWidth), _height(userHeight), category(userType) {
 	//added counter
 	_howMany++;
 }
@@ -105,4 +78,64 @@ Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _hei
 Box::~Box() {
 	//minus counter
 	_howMany--;
+}
+
+
+//copy paste printer function then changed the if statement for a switch
+//added Checkered option
+std::ostream& operator<<(std::ostream& os, const Box& boxPrint) {
+	Box::Boxtype usertype = boxPrint.getType();
+	for (int i = 0; i < boxPrint.getHeight(); i++) {
+		switch (usertype) {
+		case Box::Boxtype::FILLED:
+			for (int j = 0; j < boxPrint.getWidth(); j++) {
+				os << "x";
+			}
+			os << "\n";
+			break;
+		case Box::Boxtype::HOLLOW:
+			if (i == 0 || i == boxPrint.getHeight() - 1) {
+				for (int j = 0; j < boxPrint.getWidth(); j++) {
+					os << "x";
+				}
+			}
+			else {
+				for (int j = 0; j < boxPrint.getWidth(); j++) {
+					if (j == 0 || j == boxPrint.getWidth() - 1) {
+						os << "x";
+					}
+					else {
+						os << " ";
+					}
+				}
+			}
+			os << "\n";
+			break;
+		case Box::Boxtype::CHECKERED:
+			//create code to print checkered.
+
+			for (int j = 0; j < boxPrint.getWidth(); j++) {
+				if (i % 2 != 0) {
+					if (j % 2 != 0) {
+						os << "x";
+					}
+					else {
+						os << " ";
+					}
+				}
+				else {
+					if (j % 2 != 0) {
+						os << " ";
+					}
+					else {
+						os << "x";
+					}
+				}
+				
+			}
+			os << "\n";
+			break;
+		}
+	}
+	return os;
 }
