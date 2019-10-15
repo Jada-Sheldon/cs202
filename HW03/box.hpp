@@ -20,9 +20,12 @@ public:
 	void print(ostream& os) const;
 	Box();
 	Box(int userWidth, int userHeight);
-	Box(int userWidth, int userHeight, bool userType);
+	//changed bool to enum
+	Box(int userWidth, int userHeight, enum userType);
+	~Box();
 
 private:
+	//added enum type
 	enum _type { HOLLOW, FILLED, CHECKERED };
 	int _width;
 	int _height;

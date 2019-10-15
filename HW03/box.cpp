@@ -64,14 +64,23 @@ void Box::print(ostream& os) const {
 	}
 }
 
-Box::Box() : _width(1), _height(1), full(true) {
+//changed bool to enum type
+Box::Box() : _width(1), _height(1), _type(FILLED) {
 
 }
 
-Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), full(true) {
+//changed bool to enum type
+Box::Box(int userWidth, int userHeight) : _width(userWidth), _height(userHeight), _type(FILLED) {
 
 }
 
-Box::Box(int userWidth, int userHeight, bool userType) : _width(userWidth), _height(userHeight), full(userType) {
+//changed bool to enum type
+Box::Box(int userWidth, int userHeight, enum userType) : _width(userWidth), _height(userHeight), full(userType) {
+
+}
+
+
+//created destructor
+Box::~Box() {
 
 }
