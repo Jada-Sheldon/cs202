@@ -68,4 +68,24 @@ Money operator/(const Money& lhs, const Money& rhs)
 	return temp;
 }
 
+bool operator<(const Money& lhs, const Money& rhs)
+{
+	return lhs.getCents() < rhs.getCents();
+}
+
+bool operator>(const Money& lhs, const Money& rhs)
+{
+	return rhs < lhs;
+}
+
+bool operator<=(const Money& lhs, const Money& rhs)
+{
+	return !(rhs < lhs);
+}
+
+bool operator>=(const Money& lhs, const Money& rhs)
+{
+	return !(lhs < rhs);
+}
+
 
