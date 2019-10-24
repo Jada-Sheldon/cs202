@@ -20,5 +20,15 @@ std::ostream & operator<<(std::ostream & os, const Complex & num) {
 	return os;
 }
 
+Complex operator+=(const Complex& lhs, const Complex& rhs) {
+	double temp = lhs.getReal();
+	temp += rhs.getReal();
+	return temp;
+}
 
+Complex operator+(const Complex & lhs, const Complex& rhs) {
+	Complex temp{ lhs };
+	temp += rhs;
+	return temp;
+}
 

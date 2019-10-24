@@ -17,4 +17,8 @@ private:
 
 std::ostream& operator<<(std::ostream&, const Complex&);
 
+Complex operator+=(const Complex& lhs, const Complex& rhs);
+
+Complex operator+(const Complex & lhs, const Complex& rhs);
+
 #endif // !COMPLEX_HPP
