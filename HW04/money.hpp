@@ -9,12 +9,16 @@ public:
 	Money();
 	Money(int dollars, int cents);
 	Money(double dollerCents);
-	Money& operator+=(const Money &rhs);
-
+	Money& operator+=(const Money& rhs);
+	Money& operator-=(const Money& rhs);
+	Money& operator*=(const Money& rhs);
+	Money& operator/=(const Money& rhs);
 private:
 	int _cents;
 };
 
 Money operator+(const Money& lhs, const Money& rhs);
-
+Money operator-(const Money& lhs, const Money& rhs);
+Money operator*(const Money& lhs, const Money& rhs);
+Money operator/(const Money& lhs, const Money& rhs);
 #endif

@@ -25,10 +25,46 @@ Money& Money::operator+=(const Money& rhs)
 	_cents += rhs.getCents();
 }
 
+Money& Money::operator-=(const Money& rhs)
+{
+	_cents -= rhs.getCents;
+}
+
+Money& Money::operator*=(const Money& rhs)
+{
+	_cents *= rhs._cents;
+}
+
+Money& Money::operator/=(const Money& rhs)
+{
+	_cents /= rhs._cents;
+}
+
 Money operator+(const Money& lhs, const Money& rhs)
 {
 	Money temp{ lhs };
 	temp += rhs;
+	return temp;
+}
+
+Money operator-(const Money& lhs, const Money& rhs)
+{
+	Money temp{ lhs };
+	temp -= rhs;
+	return temp;
+}
+
+Money operator*(const Money& lhs, const Money& rhs)
+{
+	Money temp{ lhs };
+	temp *= rhs;
+	return temp;
+}
+
+Money operator/(const Money& lhs, const Money& rhs)
+{
+	Money temp{ lhs };
+	temp /= rhs;
 	return temp;
 }
 
