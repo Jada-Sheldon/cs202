@@ -1,5 +1,6 @@
 #include "money.hpp"
 
+#include <iostream>
 #include <cmath>
 
 void Money::setCents(int cents) {
@@ -40,7 +41,8 @@ Money& Money::operator-=(const Money& rhs)
 
 Money& Money::operator*=(const Money& rhs)
 {
-	_cents *= rhs._cents;
+	double dollars = (1.0 / 100.0) * _cents;
+	dollars *= (rhs._cents / 100.0);
 	return *this;
 }
 
