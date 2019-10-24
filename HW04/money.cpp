@@ -23,21 +23,25 @@ Money::Money(double dollerCents): _cents(dollerCents*100+0.5)
 Money& Money::operator+=(const Money& rhs)
 {
 	_cents += rhs.getCents();
+	return *this;
 }
 
 Money& Money::operator-=(const Money& rhs)
 {
 	_cents -= rhs.getCents();
+	return *this;
 }
 
 Money& Money::operator*=(const Money& rhs)
 {
 	_cents *= rhs._cents;
+	return *this;
 }
 
 Money& Money::operator/=(const Money& rhs)
 {
 	_cents /= rhs._cents;
+	return *this;
 }
 
 Money operator+(const Money& lhs, const Money& rhs)
