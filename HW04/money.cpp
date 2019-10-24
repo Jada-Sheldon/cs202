@@ -1,5 +1,7 @@
 #include "money.hpp"
 
+#include <iostream>
+
 void Money::setCents(int cents) {
 	_cents = cents;
 }
@@ -104,9 +106,17 @@ bool operator!=(const Money& lhs, const Money& rhs)
 
 std::ostream& operator<<(std::ostream& os, const Money& rhs)
 {
-	int money = rhs.getCents() / 100;
-	int cents = rhs.getCents() % 100;
-	os << "$" << money << "." << cents;
+	double dollar = rhs.getCents() / 100.00;
+	if (rhs == 0) {
+		os << "$0.00";
+	}
+	else if (rhs > 0) {
+		os << "$" << dollar;
+	}
+	else {
+		//create neg stuff
+	}
+	std::cout << "$" << dollar;
 	return os;
 }
 
