@@ -27,7 +27,7 @@ Money& Money::operator+=(const Money& rhs)
 
 Money& Money::operator-=(const Money& rhs)
 {
-	_cents -= rhs.getCents;
+	_cents -= rhs.getCents();
 }
 
 Money& Money::operator*=(const Money& rhs)
@@ -86,6 +86,16 @@ bool operator<=(const Money& lhs, const Money& rhs)
 bool operator>=(const Money& lhs, const Money& rhs)
 {
 	return !(lhs < rhs);
+}
+
+bool operator==(const Money& lhs, const Money& rhs)
+{
+	return lhs.getCents() == rhs.getCents();
+}
+
+bool operator!=(const Money& lhs, const Money& rhs)
+{
+	return !(lhs == rhs);
 }
 
 
