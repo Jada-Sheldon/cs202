@@ -12,6 +12,7 @@ public:
 	Money();
 	Money(int dollars, int cents);
 	Money(double dollarCents);
+	Money(const Money& original);
 	Money& operator+=(const Money& rhs);
 	Money& operator-=(const Money& rhs);
 	Money& operator*=(const Money& rhs);

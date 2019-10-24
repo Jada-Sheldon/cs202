@@ -27,6 +27,10 @@ Money::Money(double dollarCents): _cents(abs(dollarCents)*100+0.5), _neg(dollarC
 {
 }
 
+Money::Money(const Money& original) : _cents(original._cents), _neg(original._neg) 
+{
+}
+
 Money& Money::operator+=(const Money& rhs)
 {
 	_cents += rhs.getCents();
@@ -48,7 +52,8 @@ Money& Money::operator*=(const Money& rhs)
 
 Money& Money::operator/=(const Money& rhs)
 {
-	_cents /= rhs._cents;
+	double dollars = _cents / 100.0;
+	_cents /= (rhs._cents / 100.0);
 	return *this;
 }
 
