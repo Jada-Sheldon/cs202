@@ -102,4 +102,12 @@ bool operator!=(const Money& lhs, const Money& rhs)
 	return !(lhs == rhs);
 }
 
+std::ostream& operator<<(std::ostream& os, const Money& rhs)
+{
+	int money = rhs.getCents() / 100;
+	int cents = rhs.getCents() % 100;
+	os << "$" << money << "." << cents;
+	return os;
+}
+
 
