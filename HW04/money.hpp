@@ -8,15 +8,17 @@ class Money {
 public:
 	void setCents(int cents);
 	int getCents() const;
+	bool getNeg() const;
 	Money();
 	Money(int dollars, int cents);
-	Money(double dollerCents);
+	Money(double dollarCents);
 	Money& operator+=(const Money& rhs);
 	Money& operator-=(const Money& rhs);
 	Money& operator*=(const Money& rhs);
 	Money& operator/=(const Money& rhs);
 private:
 	int _cents;
+	bool _neg;
 };
 
 Money operator+(const Money& lhs, const Money& rhs);
