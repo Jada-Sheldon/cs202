@@ -582,7 +582,10 @@ void test_class_Money_arithmetic_operators(Tester& t)
 	m1 += mc1;
 	t.test(m1 == mc1, "operator+=(Money)");
 
+	std::cout << m1;
 	m1 *= 2.0;
+
+	std::cout << m1;
 	t.test(m1 == mc2, "operator*=(double)");
 
 	m1 /= 2.0;

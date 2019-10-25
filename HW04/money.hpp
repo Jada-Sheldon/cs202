@@ -1,6 +1,7 @@
 #pragma once
 #ifndef MONEY_HPP
 #define MONEY_HPP
+//Jada Sheldon
 
 #include <sstream>
 

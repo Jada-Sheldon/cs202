@@ -1,3 +1,5 @@
+//Jada Sheldon
+
 #include "money.hpp"
 
 #include <iostream>
@@ -45,14 +47,12 @@ Money& Money::operator-=(const Money& rhs)
 
 Money& Money::operator*=(const Money& rhs)
 {
-	double dollars = (1.0 / 100.0) * _cents;
-	dollars *= (rhs._cents / 100.0);
+	_cents *= rhs.getCents() / 100;
 	return *this;
 }
 
 Money& Money::operator/=(const Money& rhs)
 {
-	double dollars = _cents / 100.0;
 	_cents /= (rhs._cents / 100.0);
 	return *this;
 }
