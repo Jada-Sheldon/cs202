@@ -18,12 +18,13 @@ private:
 	int _height;
 };
 
-std::ostream operator<<(std::ostream& os, const Box & b);
+std::ostream& operator<<(std::ostream& os, const Box & b);
 
 class FilledBox : public Box {
 public:
 	void print(std::ostream & os) const override;
 	std::string type() const override;
+	FilledBox();
 	FilledBox(int width, int height);
 private:
 
@@ -33,6 +34,7 @@ class HollowBox : public Box {
 public:
 	void print(std::ostream& os) const override;
 	std::string type() const override;
+	HollowBox();
 	HollowBox(int width, int height);
 private:
 
@@ -42,6 +44,7 @@ class CheckeredBox : public Box {
 public:
 	void print(std::ostream& os) const override;
 	std::string type() const override;
+	CheckeredBox();
 	CheckeredBox(int width, int height);
 private:
 

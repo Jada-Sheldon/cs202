@@ -22,7 +22,7 @@ Box::Box(int width, int height) : _width{width}, _height{height}
 {
 }
 
-std::ostream operator<<(std::ostream& os, const Box& b)
+std::ostream& operator<<(std::ostream& os, const Box& b)
 {
 	b.print(os);
 	return os;
@@ -42,6 +42,10 @@ void FilledBox::print(std::ostream& os) const
 std::string FilledBox::type() const
 {
 	return "Filled";
+}
+
+FilledBox::FilledBox() : Box(1, 1)
+{
 }
 
 FilledBox::FilledBox(int width, int height) : Box(width, height)
@@ -73,6 +77,10 @@ void HollowBox::print(std::ostream& os) const
 std::string HollowBox::type() const
 {
 	return "Hollow";
+}
+
+HollowBox::HollowBox() : Box(1, 1)
+{
 }
 
 HollowBox::HollowBox(int width, int height) : Box(width, height)
@@ -108,6 +116,10 @@ void CheckeredBox::print(std::ostream& os) const
 std::string CheckeredBox::type() const
 {
 	return "Checkered";
+}
+
+CheckeredBox::CheckeredBox() : Box(1,1)
+{
 }
 
 CheckeredBox::CheckeredBox(int width, int height) : Box(width, height)
