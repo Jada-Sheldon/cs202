@@ -21,13 +21,16 @@ std::ostream operator<<(std::ostream& os, const Box & b);
 
 class FilledBox : public Box {
 public:
-
+	void print(std::ostream & os) const override;
+	std::string type() const override;
 private:
 
 };
 
 class HollowBox : public Box {
 public:
+	void print(std::ostream& os) const override;
+	std::string type() const override;
 
 private:
 
@@ -35,7 +38,8 @@ private:
 
 class CheckeredBox : public Box {
 public:
-
+	void print(std::ostream& os) const override;
+	std::string type() const override;
 private:
 
 };
