@@ -7,21 +7,21 @@ private:
 
 };
 
-class FilledBox {
+class FilledBox : public Box {
 public:
 
 private:
 
 };
 
-class HollowBox {
+class HollowBox : public Box {
 public:
 
 private:
 
 };
 
-class CheckeredBox {
+class CheckeredBox : public Box {
 public:
 
 private:
