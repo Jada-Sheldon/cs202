@@ -28,10 +28,15 @@ std::ostream operator<<(std::ostream& os, const Box& b)
 	return os;
 }
 
-//for filled box
+
 void FilledBox::print(std::ostream& os) const
 {
-	//copy code over
+	for (int i = 0; i < getHeight(); i++) {
+		for (int j = 0; j < getWidth(); j++) {
+			os << "x";
+		}
+		os << "\n";
+	}
 }
 
 std::string FilledBox::type() const
@@ -45,7 +50,24 @@ FilledBox::FilledBox(int width, int height) : Box(width, height)
 
 void HollowBox::print(std::ostream& os) const
 {
-	//copy code over
+	for (int i = 0; i < getHeight(); i++) {
+		if (i == 0 || i == getHeight() - 1) {
+			for (int j = 0; j < getWidth(); j++) {
+				os << "x";
+			}
+		}
+		else {
+			for (int j = 0; j < getWidth(); j++) {
+				if (j == 0 || j == getWidth() - 1) {
+					os << "x";
+				}
+				else {
+					os << " ";
+				}
+			}
+		}
+		os << "\n";
+	}
 }
 
 std::string HollowBox::type() const
@@ -59,7 +81,28 @@ HollowBox::HollowBox(int width, int height) : Box(width, height)
 
 void CheckeredBox::print(std::ostream& os) const
 {
-	//copy code over
+	for (int i = 0; i < getHeight(); i++) {
+		for (int j = 0; j < getWidth(); j++) {
+			if (i % 2 != 0) {
+				if (j % 2 != 0) {
+					os << "x";
+				}
+				else {
+					os << " ";
+				}
+			}
+			else {
+				if (j % 2 != 0) {
+					os << " ";
+				}
+				else {
+					os << "x";
+				}
+			}
+
+		}
+		os << "\n";
+	}
 }
 
 std::string CheckeredBox::type() const
