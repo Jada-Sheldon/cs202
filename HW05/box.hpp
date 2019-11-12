@@ -6,12 +6,13 @@
 
 class Box {
 public:
-	virtual void print(std::ostream & os) const = 0;
+	virtual void print(std::ostream& os) const = 0;
 	virtual std::string type() const = 0;
 	int setWidth(int widthSize);
 	int setHeight(int heightSize);
 	int getWidth() const;
 	int getHeight() const;
+	Box(int width, int height);
 private:
 	int _width;
 	int _height;
@@ -23,6 +24,7 @@ class FilledBox : public Box {
 public:
 	void print(std::ostream & os) const override;
 	std::string type() const override;
+	FilledBox(int width, int height);
 private:
 
 };
@@ -31,7 +33,7 @@ class HollowBox : public Box {
 public:
 	void print(std::ostream& os) const override;
 	std::string type() const override;
-
+	HollowBox(int width, int height);
 private:
 
 };
@@ -40,6 +42,7 @@ class CheckeredBox : public Box {
 public:
 	void print(std::ostream& os) const override;
 	std::string type() const override;
+	CheckeredBox(int width, int height);
 private:
 
 };
