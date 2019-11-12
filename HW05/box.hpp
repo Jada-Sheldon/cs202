@@ -14,6 +14,7 @@ public:
 	int getWidth() const;
 	int getHeight() const;
 	Box(int width, int height);
+	virtual ~Box();
 private:
 	int _width;
 	int _height;
@@ -27,6 +28,7 @@ public:
 	std::string type() const override;
 	FilledBox();
 	FilledBox(int width, int height);
+	~FilledBox();
 private:
 
 };
@@ -37,6 +39,7 @@ public:
 	std::string type() const override;
 	HollowBox();
 	HollowBox(int width, int height);
+	~HollowBox();
 private:
 
 };
@@ -47,6 +50,7 @@ public:
 	std::string type() const override;
 	CheckeredBox();
 	CheckeredBox(int width, int height);
+	~CheckeredBox();
 private:
 
 };
