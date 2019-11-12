@@ -28,6 +28,18 @@ std::ostream& operator<<(std::ostream& os, const Box& b)
 	return os;
 }
 
+std::unique_ptr<Box> boxFactory(char c, int w, int h)
+{
+	switch (c) {
+	case 'f':
+		return std::make_unique<FilledBox>(w,h);
+	case 'h':
+		return std::make_unique<HollowBox>(w, h);
+	case 'c':
+		return std::make_unique<CheckeredBox>(w, h);
+	}
+}
+
 
 void FilledBox::print(std::ostream& os) const
 {
