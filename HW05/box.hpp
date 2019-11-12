@@ -2,11 +2,11 @@
 #ifndef BOX_HPP
 #define BOX_HPP
 
-#include <string>
+#include <sstream>
 
 class Box {
 public:
-	virtual void print() const = 0;
+	virtual void print(std::ostream & os) const = 0;
 	virtual std::string type() const = 0;
 	int setWidth(int widthSize);
 	int setHeight(int heightSize);
@@ -16,6 +16,8 @@ private:
 	int _width;
 	int _height;
 };
+
+std::ostream operator<<(std::ostream& os, const Box & b);
 
 class FilledBox : public Box {
 public:

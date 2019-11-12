@@ -17,3 +17,9 @@ int Box::getWidth() const {
 int Box::getHeight() const {
 	return _height;
 }
+
+std::ostream operator<<(std::ostream& os, const Box& b)
+{
+	b.print(os);
+	return os;
+}
